@@ -10,7 +10,7 @@ from gmail import Gmail
 # - cd .. && python parse_email.py
 
 def find_test(g):
-    for mail in g.inbox().mail(unread=True):
+    for mail in g.inbox().mail():
         mail.fetch()
         if 'test' in mail.subject and 'test' in mail.body:
             return True
